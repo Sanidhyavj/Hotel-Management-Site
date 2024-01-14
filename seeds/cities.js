@@ -19,7 +19,7 @@ module.exports.cities = [
       "admin_name": "Mahārāshtra",
       "capital": "admin",
       "population": 23355000,
-      "population_proper": 12478447
+      "population_proper": 12478447,
     },
     {
       "city": "Kolkāta",

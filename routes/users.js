@@ -25,7 +25,7 @@ router.post('/register', catchAsync(async (req, res, next) => {
         })
     } catch (e) {
         req.flash('error', e.message);
-        res.redirect('register');
+        res.redirect('/register');
     }
 }));
 

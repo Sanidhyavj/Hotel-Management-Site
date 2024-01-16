@@ -22,8 +22,8 @@ const User = require('./models/user');
 const userRoutes = require('./routes/users');
 const MongoStore = require('connect-mongo');
 const morgan=require('morgan')
-//const dbUrl = process.env.DB_URL;
-const dbUrl = 'mongodb://localhost:27017/yelp-camp'
+const dbUrl = process.env.DB_URL;
+// const dbUrl = 'mongodb://localhost:27017/yelp-camp'
 
 main().catch(err => console.log(err));
 

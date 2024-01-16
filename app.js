@@ -21,13 +21,14 @@ const LocalStrategy = require('passport-local');
 const User = require('./models/user');
 const userRoutes = require('./routes/users');
 const MongoStore = require('connect-mongo');
-
-const dbUrl = process.env.DB_URL;
+const morgan=require('morgan')
+//const dbUrl = process.env.DB_URL;
+const dbUrl = 'mongodb://localhost:27017/yelp-camp'
 
 main().catch(err => console.log(err));
 
 async function main() {
-  await mongoose.connect('mongodb://localhost:27017/yelp-camp');
+  await mongoose.connect(dbUrl);
 
   // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
 }
@@ -37,6 +38,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'))
 
 app.use(express.urlencoded({ extended: true }));
+app.use(morgan())
 app.use(methodOverride('_method'));
 
 const store = MongoStore.create({
